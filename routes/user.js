@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../Models/User");
 const mongoose = require('mongoose');
-const validator = require('validator');
+
 
 function isLastCharacterSemicolon(inputString) {
     if (typeof inputString === 'string' && inputString.length > 0) {
