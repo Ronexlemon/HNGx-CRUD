@@ -53,8 +53,12 @@ router.post('/',async (req, res) => {
 //Get all Method
 router.get('/getAll',async (req, res) => {
     try{
- const data = await User.find();
- res.json(data);
+ const data = await User.find().exec()
+ .then(user =>{
+    res.json(user);
+
+ });
+ 
     }catch(error){
         res.status(500).json({message: error.message})
     }
